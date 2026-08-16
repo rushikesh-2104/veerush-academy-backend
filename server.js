@@ -20,7 +20,14 @@ const app = express();
 connectDB();
 
 // Middleware
-app.use(cors());
+app.use(cors({
+    origin: [
+        "http://localhost:4200",
+        "https://veerush-academy.vercel.app"
+    ],
+    credentials: true
+}));
+
 app.use(express.json());
 
 app.use("/api/auth", authRoutes);
