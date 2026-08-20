@@ -14,6 +14,7 @@ const classRoutes = require("./routes/class.route");
 const weeklyTestRoutes = require("./routes/weeklyTest.routes");
 const announcementRoutes = require("./routes/announcement.routes");
 const buddyRoutes = require("./routes/buddy.routes");
+const weeklyReportRoutes = require("./routes/weeklyReport.routes");
 const app = express();
 
 // Connect Database
@@ -53,5 +54,9 @@ app.use(
     announcementRoutes
 );
 app.use("/api/buddy", buddyRoutes);
+app.use(
+    "/api/reports",
+    weeklyReportRoutes
+);
 
 module.exports = app;
